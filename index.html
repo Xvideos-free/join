@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XVideos Access - Multilingual</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif, system-ui;
+            background: linear-gradient(to bottom, #000000, #1a1a1a);
+            color: #fff;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        #container {
+            width: 90%;
+            max-width: 900px;
+            background: rgba(30, 30, 30, 0.95);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .heading {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ff4500;
+            text-shadow: 2px 2px 10px #000;
+            margin-bottom: 20px;
+        }
+
+        .info-text {
+            font-size: 18px;
+            color: #ccc;
+            margin: 15px 0;
+            background: linear-gradient(45deg, #ff4500, #ff6347);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        }
+
+        .steps {
+            margin: 20px 0;
+            text-align: left;
+            font-size: 16px;
+            color: #ddd;
+            line-height: 1.8;
+        }
+
+        .steps span.number {
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff4500, #ff6347);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-size: 18px;
+        }
+
+        #cta-button {
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+            background: linear-gradient(45deg, #ff4500, #ff6347);
+            text-transform: uppercase;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(255, 69, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 20px;
+        }
+
+        #cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 69, 0, 0.8);
+        }
+
+        .password-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .password-container input {
+            padding: 12px;
+            font-size: 18px;
+            width: 80%;
+            max-width: 400px;
+            background-color: #333;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .password-container button {
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+            background: linear-gradient(45deg, #ff4500, #ff6347);
+            text-transform: uppercase;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .password-container button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 69, 0, 0.8);
+        }
+
+        .notification {
+            display: none;
+            color: #28a745;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="heading" data-translate="heading">Get Instant Access to XVideos Content!</div>
+
+        <div class="info-text" data-translate="info-text">Unlock All Videos in 3 easy steps using your password:</div>
+        
+        <div class="password-container">
+            <input type="text" id="password" readonly placeholder="Generated Password will appear here" data-translate="password-placeholder">
+            <br>
+            <button onclick="generatePassword()" data-translate="generate-password">GET ACCESS PASSWORD</button>
+            <button onclick="copyPassword()" data-translate="copy-password">Copy Password</button>
+            <div class="notification" id="notification" data-translate="password-copied">Password copied!</div>
+        </div>
+
+        <div class="steps">
+            <p><span class="number" data-translate="step1-number">1.</span> <span data-translate="step1">Answer a few questions, then press and hold the password input field, paste the copied password.</span></p>
+            <p><span class="number" data-translate="step2-number">2.</span> <span data-translate="step2">Simple registration with no email confirmation required.</span></p>
+            <p><span class="number" data-translate="step3-number">3.</span> <span data-translate="step3">Unlimited access to exclusive adult content is open!</span></p>
+        </div>
+
+        <a id="cta-button" href="https://wr22mrh.topdate-here.one/caeppt3" 
+           target="_blank" rel="noopener noreferrer" data-translate="cta-button">Unlock XVideos Content Now for Free</a>
+    </div>
+
+<script>
+    const translations = {
+        "en": {
+            "heading": "Get Instant Access to XVideos Content!",
+            "info-text": "Unlock All Videos in 3 easy steps using your password:",
+            "step1": "Answer a few questions, then press and hold the password input field, paste the copied password.",
+            "step2": "Simple registration with no email confirmation required.",
+            "step3": "Unlimited access to exclusive adult content is open!",
+            "cta-button": "Unlock XVideos Content Now for Free",
+            "password-placeholder": "Generated Password will appear here",
+            "generate-password": "GET ACCESS PASSWORD",
+            "copy-password": "Copy Password",
+            "password-copied": "Password copied!"
+        },
+        "ru": {
+            "heading": "Получите мгновенный доступ к контенту XVideos!",
+            "info-text": "Разблокируйте все видео за 3 простых шага, используя свой пароль:",
+            "step1": "Ответьте на несколько вопросов, затем нажмите и удерживайте поле ввода пароля, вставьте скопированный пароль.",
+            "step2": "Простая регистрация без подтверждения по электронной почте.",
+            "step3": "Неограниченный доступ к эксклюзивному контенту открыт!",
+            "cta-button": "Разблокировать контент XVideos бесплатно",
+            "password-placeholder": "Сгенерированный пароль появится здесь",
+            "generate-password": "ПОЛУЧИТЕ ПАРОЛЬ ДЛЯ ДОСТУПА",
+            "copy-password": "Копировать пароль",
+            "password-copied": "Пароль скопирован!"
+        },
+        "fr": {
+            "heading": "Obtenez un accès instantané au contenu XVideos !",
+            "info-text": "Déverrouillez toutes les vidéos en 3 étapes faciles en utilisant votre mot de passe :",
+            "step1": "Répondez à quelques questions, puis appuyez et maintenez le champ de saisie du mot de passe, collez le mot de passe copié.",
+            "step2": "Inscription simple sans confirmation par e-mail.",
+            "step3": "Accès illimité au contenu exclusif ouvert !",
+            "cta-button": "Déverrouillez le contenu XVideos maintenant gratuitement",
+            "password-placeholder": "Le mot de passe généré apparaîtra ici",
+            "generate-password": "OBTENIR LE MOT DE PASSE D'ACCÈS",
+            "copy-password": "Copier le mot de passe",
+            "password-copied": "Mot de passe copié !"
+        },
+        "de": {
+            "heading": "Erhalten Sie sofortigen Zugriff auf XVideos-Inhalte!",
+            "info-text": "Schalten Sie alle Videos in 3 einfachen Schritten mit Ihrem Passwort frei:",
+            "step1": "Beantworten Sie ein paar Fragen, halten Sie dann das Passwort-Eingabefeld gedrückt und fügen Sie das kopierte Passwort ein.",
+            "step2": "Einfache Registrierung ohne Bestätigung per E-Mail.",
+            "step3": "Unbegrenzter Zugriff auf exklusive Inhalte ist freigeschaltet!",
+            "cta-button": "Schalten Sie jetzt kostenlos XVideos-Inhalte frei",
+            "password-placeholder": "Das generierte Passwort wird hier angezeigt",
+            "generate-password": "PASSWORT FÜR ZUGRIFF HOLEN",
+            "copy-password": "Passwort kopieren",
+            "password-copied": "Passwort kopiert!"
+        },
+        "it": {
+            "heading": "Ottieni accesso istantaneo ai contenuti di XVideos!",
+            "info-text": "Sblocca tutti i video in 3 semplici passaggi usando la tua password:",
+            "step1": "Rispondi a qualche domanda, poi premi e tieni premuto il campo di inserimento della password, incolla la password copiata.",
+            "step2": "Registrazione semplice senza conferma tramite email.",
+            "step3": "Accesso illimitato ai contenuti esclusivi è aperto!",
+            "cta-button": "Sblocca i contenuti di XVideos ora gratuitamente",
+            "password-placeholder": "La password generata apparirà qui",
+            "generate-password": "OTTENERE LA PASSWORD DI ACCESSO",
+            "copy-password": "Copia la password",
+            "password-copied": "Password copiata!"
+        },
+        "es": {
+            "heading": "¡Obtén acceso instantáneo al contenido de XVideos!",
+            "info-text": "Desbloquea todos los videos en 3 pasos fáciles usando tu contraseña:",
+            "step1": "Responde algunas preguntas, luego presiona y mantén presionado el campo de entrada de la contraseña, pega la contraseña copiada.",
+            "step2": "Registro simple sin confirmación por correo electrónico.",
+            "step3": "¡Acceso ilimitado a contenido exclusivo abierto!",
+            "cta-button": "Desbloquear contenido de XVideos ahora gratis",
+            "password-placeholder": "La contraseña generada aparecerá aquí",
+            "generate-password": "OBTENER CONTRASEÑA DE ACCESO",
+            "copy-password": "Copiar contraseña",
+            "password-copied": "¡Contraseña copiada!"
+        }
+    };
+
+    function detectLanguage() {
+        const lang = navigator.language || navigator.userLanguage;
+        return lang.split('-')[0]; // Extract language code (e.g., "en", "ru")
+    }
+
+    function translatePage() {
+        const userLang = detectLanguage();
+        const lang = translations[userLang] || translations["en"]; // Default to English if no match
+        document.querySelectorAll('[data-translate]').forEach(el => {
+            const key = el.getAttribute('data-translate');
+            if (lang[key]) {
+                el.textContent = lang[key];
+            }
+        });
+    }
+
+    function generatePassword() {
+        const length = Math.floor(Math.random() * (18 - 16 + 1)) + 16;
+        const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~!@#$%^&*()_+";
+        let password = "";
+        for (let i = 0; i < length; i++) {
+            password += charset.charAt(Math.floor(Math.random() * charset.length));
+        }
+        document.getElementById("password").value = password;
+    }
+
+    function copyPassword() {
+        const passwordInput = document.getElementById("password");
+        passwordInput.select();
+        document.execCommand("copy");
+        const notification = document.getElementById("notification");
+        notification.style.display = "block";
+        setTimeout(() => { notification.style.display = "none"; }, 2000);
+    }
+
+    // Translate the page on load
+    window.onload = translatePage;
+</script>
+</body>
+</html>
