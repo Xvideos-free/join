@@ -1,294 +1,165 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XVideos Access - Multilingual</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            font-family: Arial, sans-serif, system-ui;
-            background: linear-gradient(to bottom, #000000, #1a1a1a);
-            color: #fff;
-            overflow-x: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>freeteens</title>
+  <meta name="generator" content="WYSIWYG Web Builder 18 - https://www.wysiwygwebbuilder.com">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #000;
+      color: #fff;
+    }
 
-        #container {
-            width: 90%;
-            max-width: 900px;
-            background: rgba(30, 30, 30, 0.95);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
-            text-align: center;
-            margin: 20px 0;
-        }
+    #container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
 
-        .heading {
-            font-size: 28px;
-            font-weight: bold;
-            color: #ff4500;
-            text-shadow: 2px 2px 10px #000;
-            margin-bottom: 20px;
-        }
+    #takeTest {
+      color: yellow;
+      font-size: 24px;
+      margin: 20px 0;
+    }
 
-        .info-text {
-            font-size: 18px;
-            color: #ccc;
-            margin: 15px 0;
-            background: linear-gradient(45deg, #ff4500, #ff6347);
-            -webkit-background-clip: text;
-            color: transparent;
-            font-weight: bold;
-        }
+    #instructions {
+      color: red;
+      font-size: 20px;
+      margin: 10px 0;
+      display: none;
+    }
 
-        .steps {
-            margin: 20px 0;
-            text-align: left;
-            font-size: 16px;
-            color: #ddd;
-            line-height: 1.8;
-        }
+    #getOffer {
+      color: white;
+      font-size: 18px;
+      margin: 10px 0;
+    }
 
-        .steps span.number {
-            font-weight: bold;
-            background: linear-gradient(45deg, #ff4500, #ff6347);
-            -webkit-background-clip: text;
-            color: transparent;
-            font-size: 18px;
-        }
+    img {
+      max-width: 100%;
+      height: auto;
+      cursor: pointer;
+    }
 
-        #cta-button {
-            padding: 15px 40px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #000;
-            background: linear-gradient(45deg, #ff4500, #ff6347);
-            text-transform: uppercase;
-            border-radius: 8px;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 5px 15px rgba(255, 69, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-top: 20px;
-        }
+    #startButton {
+      background-color: yellow;
+      color: black;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
 
-        #cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(255, 69, 0, 0.8);
-        }
+    #startButton:hover {
+      background-color: orange;
+    }
 
-        .password-container {
-            margin: 20px 0;
-            text-align: center;
-        }
+    /* Увеличенный текст для мобильной версии */
+    @media (max-width: 600px) {
+      #takeTest {
+        font-size: 24px;
+      }
 
-        .password-container input {
-            padding: 12px;
-            font-size: 18px;
-            width: 80%;
-            max-width: 400px;
-            background-color: #333;
-            border: none;
-            border-radius: 8px;
-            color: #fff;
-            text-align: center;
-            margin-bottom: 15px;
-        }
+      #instructions {
+        font-size: 16px;
+      }
 
-        .password-container button {
-            padding: 15px 40px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #000;
-            background: linear-gradient(45deg, #ff4500, #ff6347);
-            text-transform: uppercase;
-            border-radius: 8px;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-top: 10px;
-        }
+      #getOffer {
+        font-size: 20px;
+      }
 
-        .password-container button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(255, 69, 0, 0.8);
-        }
-
-        .notification {
-            display: none;
-            color: #28a745;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-    <div id="container">
-        <div class="heading" data-translate="heading">Get Instant Access to XVideos Content!</div>
-
-        <div class="info-text" data-translate="info-text">Unlock All Videos in 3 easy steps using your password:</div>
-        
-        <div class="password-container">
-            <input type="text" id="password" readonly placeholder="Generated Password will appear here" data-translate="password-placeholder">
-            <br>
-            <button onclick="generatePassword()" data-translate="generate-password">GET ACCESS PASSWORD</button>
-            <button onclick="copyPassword()" data-translate="copy-password">Copy Password</button>
-            <div class="notification" id="notification" data-translate="password-copied">Password copied!</div>
-        </div>
-
-        <div class="steps">
-            <p><span class="number" data-translate="step1-number">1.</span> <span data-translate="step1">Answer the questions (ANSWERS DO NOT MATTER, CLICK ANY), then click and hold the password entry box, paste the copied password.</span></p>
-            <p><span class="number" data-translate="step2-number">2.</span> <span data-translate="step2">Simple registration with no email confirmation required.</span></p>
-            <p><span class="number" data-translate="step3-number">3.</span> <span data-translate="step3">Unlimited access to exclusive adult content is open!</span></p>
-        </div>
-
-        <a id="cta-button" href="https://trk.ezymny.com/2da5fc86-a3b5-46c5-9751-394f836c85f6?o=2736" 
-           target="_blank" rel="noopener noreferrer" data-translate="cta-button">Unlock XVideos Content Now for Free</a>
-    </div>
-
-<script>
+      #startButton {
+        font-size: 16px;
+      }
+    }
+  </style>
+  <script>
+    // Переводы для Tier 1, 2 и 3 языков
     const translations = {
-        "en": {
-            "heading": "Get Instant Access to XVideos Content!",
-            "info-text": "Unlock All Videos in 3 easy steps using your password:",
-            "step1": "Answer the questions (ANSWERS DO NOT MATTER, CLICK ANY), then click and hold the password entry box, paste the copied password.",
-            "step2": "Simple registration with no email confirmation required.",
-            "step3": "Unlimited access to exclusive adult content is open!",
-            "cta-button": "Unlock XVideos Content Now for Free",
-            "password-placeholder": "Generated Password will appear here",
-            "generate-password": "GET ACCESS PASSWORD",
-            "copy-password": "Copy Password",
-            "password-copied": "Password copied!"
-        },
-        "ru": {
-            "heading": "Получите мгновенный доступ к контенту XVideos!",
-            "info-text": "Разблокируйте все видео за 3 простых шага, используя ваш пароль:",
-            "step1": "Ответьте на вопросы (ОТВЕТЫ НЕ ИМЕЮТ ЗНАЧЕНИЯ, КЛИКАЙТЕ ЛЮБЫЕ), затем нажмите и удерживайте поле для пароля, вставьте скопированный пароль.",
-            "step2": "Простая регистрация без подтверждения электронной почты.",
-            "step3": "Неограниченный доступ к эксклюзивному контенту открыт!",
-            "cta-button": "Разблокировать контент XVideos бесплатно",
-            "password-placeholder": "Здесь появится сгенерированный пароль",
-            "generate-password": "ПОЛУЧИТЬ ПАРОЛЬ ДЛЯ ДОСТУПА",
-            "copy-password": "Копировать пароль",
-            "password-copied": "Пароль скопирован!"
-        },
-        "fr": {
-            "heading": "Obtenez un accès instantané au contenu XVideos !",
-            "info-text": "Débloquez toutes les vidéos en 3 étapes faciles avec votre mot de passe :",
-            "step1": "Répondez aux questions (LES RÉPONSES N'ONT PAS D'IMPORTANCE, CLIQUEZ SUR N'IMPORTE QUELLE), puis cliquez et maintenez la boîte de saisie du mot de passe, collez le mot de passe copié.",
-            "step2": "Inscription simple sans confirmation par e-mail.",
-            "step3": "Accès illimité au contenu exclusif est ouvert !",
-            "cta-button": "Débloquer le contenu XVideos maintenant gratuitement",
-            "password-placeholder": "Le mot de passe généré apparaîtra ici",
-            "generate-password": "OBTENIR LE MOT DE PASSE D'ACCÈS",
-            "copy-password": "Copier le mot de passe",
-            "password-copied": "Mot de passe copié !"
-        },
-        "de": {
-            "heading": "Erhalten Sie sofortigen Zugriff auf XVideos-Inhalte!",
-            "info-text": "Schalten Sie alle Videos in 3 einfachen Schritten mit Ihrem Passwort frei:",
-            "step1": "Beantworten Sie die Fragen (ANTWORTEN SIND EGAL, KLICKEN SIE AUF BELIEBIGE), klicken Sie dann auf das Passwortfeld und halten Sie es gedrückt, fügen Sie das kopierte Passwort ein.",
-            "step2": "Einfache Registrierung ohne E-Mail-Bestätigung.",
-            "step3": "Unbegrenzter Zugriff auf exklusive Inhalte ist geöffnet!",
-            "cta-button": "Schalten Sie XVideos-Inhalte jetzt kostenlos frei",
-            "password-placeholder": "Das generierte Passwort erscheint hier",
-            "generate-password": "ZUGANGSPASSWORT ERHALTEN",
-            "copy-password": "Passwort kopieren",
-            "password-copied": "Passwort kopiert!"
-        },
-        "it": {
-            "heading": "Ottieni accesso immediato ai contenuti di XVideos!",
-            "info-text": "Sblocca tutti i video in 3 semplici passaggi con la tua password:",
-            "step1": "Rispondi alle domande (LE RISPOSTE NON CONTANO, CLICCA QUALSIASI), quindi fai clic e tieni premuto il campo della password, incolla la password copiata.",
-            "step2": "Registrazione semplice senza conferma via e-mail.",
-            "step3": "Accesso illimitato ai contenuti esclusivi è attivo!",
-            "cta-button": "Sblocca ora i contenuti di XVideos gratuitamente",
-            "password-placeholder": "La password generata apparirà qui",
-            "generate-password": "OTTENERE LA PASSWORD DI ACCESSO",
-            "copy-password": "Copia la password",
-            "password-copied": "Password copiata!"
-        },
-        "es": {
-            "heading": "¡Obtén acceso instantáneo al contenido de XVideos!",
-            "info-text": "Desbloquea todos los videos en 3 pasos sencillos con tu contraseña:",
-            "step1": "Responde a las preguntas (LAS RESPUESTAS NO IMPORTAN, HAZ CLIC EN CUALQUIERA), luego haz clic y mantén presionado el campo de la contraseña, pega la contraseña copiada.",
-            "step2": "Registro sencillo sin confirmación de correo electrónico.",
-            "step3": "¡Acceso ilimitado al contenido exclusivo está abierto!",
-            "cta-button": "Desbloquear el contenido de XVideos ahora gratis",
-            "password-placeholder": "La contraseña generada aparecerá aquí",
-            "generate-password": "OBTENER CONTRASEÑA DE ACCESO",
-            "copy-password": "Copiar contraseña",
-            "password-copied": "¡Contraseña copiada!"
-        },
-        "ro": {
-            "heading": "Obține acces instantaneu la conținutul XVideos!",
-            "info-text": "Deblochează toate videoclipurile în 3 pași simpli folosind parola ta:",
-            "step1": "Răspunde la întrebări (RĂSPUNSURILE NU CONTEAZĂ, CLICAȚI ORICE), apoi faceți clic și țineți apăsat câmpul parolei, lipiți parola copiată.",
-            "step2": "Înregistrare simplă fără confirmare prin e-mail.",
-            "step3": "Acces nelimitat la conținut exclusiv este deschis!",
-            "cta-button": "Deblocați acum conținutul XVideos gratuit",
-            "password-placeholder": "Parola generată va apărea aici",
-            "generate-password": "OBȚINE PAROLA DE ACCES",
-            "copy-password": "Copiază parola",
-            "password-copied": "Parola copiată!"
-        },
-        "bg": {
-            "heading": "Получете незабавен достъп до съдържание от XVideos!",
-            "info-text": "Отключете всички видеа с 3 лесни стъпки с вашата парола:",
-            "step1": "Отговорете на въпросите (ОТГОВОРИТЕ НЯМАТ ЗНАЧЕНИЕ, КЛИКНЕТЕ НА ЛЮБИ) и след това натиснете и задръжте полето за парола, поставете копираната парола.",
-            "step2": "Лесна регистрация без потвърждение по имейл.",
-            "step3": "Неограничен достъп до ексклузивно съдържание е отворен!",
-            "cta-button": "Отключете съдържание от XVideos сега безплатно",
-            "password-placeholder": "Генерираната парола ще се появи тук",
-            "generate-password": "ПОЛУЧЕТЕ ПАРОЛА ЗА ДОСТЪП",
-            "copy-password": "Копирайте паролата",
-            "password-copied": "Паролата е копирана!"
-        }
+      en: {
+        takeTest: "TAKE A SHORT TEST",
+        instructions: "THE VIDEO WILL RUN AFTER THE TEST.",
+        getOffer: "The video will start automatically on the “Thank You!” page.",
+        startButton: "START TEST"
+      },
+      ru: {
+        takeTest: "ПРОЙДИТЕ КОРОТКИЙ ТЕСТ",
+        instructions: "ВИДЕО ЗАПУСТИТСЯ ПОСЛЕ ТЕСТА.",
+        getOffer: "Видео начнётся автоматически на странице «Спасибо!».",
+        startButton: "НАЧАТЬ ТЕСТ"
+      },
+      es: {
+        takeTest: "REALIZA UNA PRUEBA CORTA",
+        instructions: "EL VIDEO SE REPRODUCIRÁ DESPUÉS DE LA PRUEBA.",
+        getOffer: "El video se iniciará automáticamente en la página de “Gracias!”.",
+        startButton: "COMENZAR PRUEBA"
+      },
+      // Добавить остальные переводы...
     };
 
-    function detectLanguage() {
-        const lang = navigator.language || navigator.userLanguage;
-        return lang.split('-')[0]; // Extract language code (e.g., "en", "ru")
+    // Установка языка
+    function setLanguage() {
+      const userLang = navigator.language.slice(0, 2); // Первые две буквы языка
+      const lang = translations[userLang] ? userLang : 'en'; // Если язык неизвестен, использовать английский
+
+      document.getElementById('takeTest').textContent = translations[lang].takeTest;
+      document.getElementById('instructions').textContent = translations[lang].instructions;
+      document.getElementById('getOffer').textContent = translations[lang].getOffer;
+      document.getElementById('startButton').textContent = translations[lang].startButton;
     }
 
-    function translatePage() {
-        const userLang = detectLanguage();
-        const lang = translations[userLang] || translations["en"]; // Default to English if no match
-        document.querySelectorAll('[data-translate]').forEach(el => {
-            const key = el.getAttribute('data-translate');
-            if (lang[key]) {
-                el.textContent = lang[key];
-            }
-        });
+    // Показать текст после клика
+    function showInstructions() {
+      document.getElementById('instructions').style.display = 'block';
     }
 
-    function generatePassword() {
-        const length = Math.floor(Math.random() * (18 - 16 + 1)) + 16;
-        const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~!@#$%^&*()_+";
-        let password = "";
-        for (let i = 0; i < length; i++) {
-            password += charset.charAt(Math.floor(Math.random() * charset.length));
-        }
-        document.getElementById("password").value = password;
+    // Функция для редиректа по типу устройства
+  function redirectToDeviceLink() {
+    const androidLink = "https://phaibeertou.com/link?z=6962446&var={SOURCE_ID}&ymid={CLICK_ID}";
+    const iosLink = "https://phaibeertou.com/link?z=5753412&var={SOURCE_ID}&ymid={CLICK_ID}";
+    const desktopLink = "https://phaibeertou.com/link?z=6488869&var={SOURCE_ID}&ymid={CLICK_ID}";
+
+      if (/Android/i.test(navigator.userAgent)) {
+        window.open(androidLink, "_blank");
+      } else if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        window.open(iosLink, "_blank");
+      } else {
+        window.open(desktopLink, "_blank");
+      }
     }
 
-    function copyPassword() {
-        const passwordInput = document.getElementById("password");
-        passwordInput.select();
-        document.execCommand("copy");
-        const notification = document.getElementById("notification");
-        notification.style.display = "block";
-        setTimeout(() => { notification.style.display = "none"; }, 2000);
-    }
-
-    // Translate the page on load
-    window.onload = translatePage;
-</script>
+    // Инициализация при загрузке страницы
+    window.onload = function () {
+      setLanguage();
+      document.getElementById('Image2').onclick = redirectToDeviceLink;
+      document.getElementById('Image3').onclick = showInstructions;
+      document.getElementById('startButton').onclick = redirectToDeviceLink;
+    };
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div id="wb_Text1">
+      <p id="takeTest">TAKE A SHORT TEST</p>
+    </div>
+    <div>
+      <img src="images/test2.png" id="Image2" alt="Test Image">
+    </div>
+    <div>
+      <img src="images/xvideo.png" id="Image3" alt="Video Image">
+    </div>
+    <div>
+      <p id="instructions">THE VIDEO WILL RUN AFTER THE TEST.</p>
+      <p id="getOffer">The video will start automatically on the “Thank You!” page.</p>
+    </div>
+    <button id="startButton">START TEST</button>
+  </div>
 </body>
 </html>
