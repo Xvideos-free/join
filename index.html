@@ -38,6 +38,25 @@
             margin-bottom: 20px;
         }
 
+        .image-heading {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ffd700;
+            text-shadow: 1px 1px 5px #000;
+            margin-top: 20px;
+        }
+
+        .sub-heading {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+            background: linear-gradient(45deg, #ff4500, #ff6347);
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+
         .info-text {
             font-size: 18px;
             color: #ccc;
@@ -126,14 +145,40 @@
             color: #28a745;
             font-weight: bold;
         }
+
+        .image-container {
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-width: 100%;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
     <div id="container">
         <div class="heading" data-translate="heading">Get Instant Access to XVideos Content!</div>
 
-        <div class="info-text" data-translate="info-text">Unlock All Videos in 3 easy steps using your password:</div>
+        <div class="image-heading" data-translate="image-heading">EXCLUSIVE 18+ ENTERTAINMENT PORTAL</div>
+
+        <!-- Image -->
+        <div class="image-container">
+            <img src="ai_botfull.png" alt="Full AI Bot Image" data-translate="ai-botfull-alt">
+        </div>
+
+        <div class="sub-heading" data-translate="sub-heading">With private section XVideos 380000+ HD Video</div>
+
+        <div class="info-text" data-translate="info-text">Unlock the XVideos section in 3 easy steps using your password:</div>
         
+        <!-- Password Generator -->
         <div class="password-container">
             <input type="text" id="password" readonly placeholder="Generated Password will appear here" data-translate="password-placeholder">
             <br>
@@ -143,23 +188,28 @@
         </div>
 
         <div class="steps">
-            <p><span class="number" data-translate="step1-number">1.</span> <span data-translate="step1">Answer the questions (ANSWERS DO NOT MATTER, CLICK ANY), then click and hold the password entry box, paste the copied password.</span></p>
-            <p><span class="number" data-translate="step2-number">2.</span> <span data-translate="step2">Simple registration with no email confirmation required.</span></p>
-            <p><span class="number" data-translate="step3-number">3.</span> <span data-translate="step3">Unlimited access to exclusive adult content is open!</span></p>
+            <p><span class="number" data-translate="step1-number">1.</span> <span data-translate="step1">UNLOCK MY MATCHES.</span></p>
+            <p><span class="number" data-translate="step2-number">2.</span> <span data-translate="step2">WHILE HOLDING DOWN THE PASSWORD FIELD, PASTE THE PASSWORD YOU RECEIVED.</span></p>
+            <p><span class="number" data-translate="step3-number">3.</span> <span data-translate="step3">FULL ACCESS TO XVideos SECTION OPEN!</span></p>
         </div>
 
-        <a id="cta-button" href="https://www1.affhone.fyi/click?pid=3749&offer_id=932" 
+        <!-- Button -->
+        <a id="cta-button" href="https://www1.affhone.fyi/click?pid=3749&offer_id=940" 
            target="_blank" rel="noopener noreferrer" data-translate="cta-button">Unlock XVideos Content Now for Free</a>
     </div>
 
 <script>
+    // Объект с переводами для различных языков
     const translations = {
         "en": {
             "heading": "Get Instant Access to XVideos Content!",
-            "info-text": "Unlock All Videos in 3 easy steps using your password:",
-            "step1": "Answer the questions (ANSWERS DO NOT MATTER, CLICK ANY), paste the copied password.",
-            "step2": "Simple registration with no email confirmation required.",
-            "step3": "Unlimited access to exclusive adult content is open!",
+            "image-heading": "EXCLUSIVE 18+ ENTERTAINMENT PORTAL",
+            "ai-botfull-alt": "Full AI Bot Image",
+            "sub-heading": "With private section XVideos 380000+ HD Video",
+            "info-text": "Unlock the XVideos section in 3 easy steps using your password:",
+            "step1": "UNLOCK MY MATCHES.",
+            "step2": "WHILE HOLDING DOWN THE PASSWORD FIELD, PASTE THE PASSWORD YOU RECEIVED.",
+            "step3": "FULL ACCESS TO XVideos SECTION OPEN!",
             "cta-button": "Unlock XVideos Content Now for Free",
             "password-placeholder": "Generated Password will appear here",
             "generate-password": "GET ACCESS PASSWORD",
@@ -168,107 +218,42 @@
         },
         "ru": {
             "heading": "Получите мгновенный доступ к контенту XVideos!",
-            "info-text": "Разблокируйте все видео за 3 простых шага, используя ваш пароль:",
-            "step1": "Ответьте на вопросы (ОТВЕТЫ НЕ ИМЕЮТ ЗНАЧЕНИЯ, КЛИКАЙТЕ ЛЮБЫЕ), вставьте скопированный пароль.",
-            "step2": "Простая регистрация без подтверждения электронной почты.",
-            "step3": "Неограниченный доступ к эксклюзивному контенту открыт!",
-            "cta-button": "Разблокировать контент XVideos бесплатно",
-            "password-placeholder": "Здесь появится сгенерированный пароль",
-            "generate-password": "ПОЛУЧИТЬ ПАРОЛЬ ДЛЯ ДОСТУПА",
+            "image-heading": "ЭКСКЛЮЗИВНЫЙ 18+ ПОРТАЛ",
+            "ai-botfull-alt": "Полный AI бот изображение",
+            "sub-heading": "С приватным разделом XVideos 380000+ HD Видео",
+            "info-text": "Разблокируйте раздел XVideos за 3 простых шага, используя ваш пароль:",
+            "step1": "ОТВЕТЬТЕ НА ВОПРОСЫ",
+            "step2": "ДЕРЖА ПОЛЕ ПАРОЛЯ, ВСТАВЬТЕ ПОЛУЧЕННЫЙ ПАРОЛЬ.",
+            "step3": "ПОЛНЫЙ ДОСТУП К РАЗДЕЛУ XVideos ОТКРЫТ!",
+            "cta-button": "Разблокировать контент XVideos сейчас бесплатно",
+            "password-placeholder": "Сгенерированный пароль появится здесь",
+            "generate-password": "ПОЛУЧИТЕ ПАРОЛЬ ДЛЯ ДОСТУПА",
             "copy-password": "Копировать пароль",
             "password-copied": "Пароль скопирован!"
-        },
-        "fr": {
-            "heading": "Obtenez un accès instantané au contenu XVideos !",
-            "info-text": "Débloquez toutes les vidéos en 3 étapes faciles avec votre mot de passe :",
-            "step1": "Répondez aux questions (LES RÉPONSES N'ONT PAS D'IMPORTANCE, CLIQUEZ SUR N'IMPORTE QUELLE), collez le mot de passe copié.",
-            "step2": "Inscription simple sans confirmation par e-mail.",
-            "step3": "Accès illimité au contenu exclusif est ouvert !",
-            "cta-button": "Débloquer le contenu XVideos maintenant gratuitement",
-            "password-placeholder": "Le mot de passe généré apparaîtra ici",
-            "generate-password": "OBTENIR LE MOT DE PASSE D'ACCÈS",
-            "copy-password": "Copier le mot de passe",
-            "password-copied": "Mot de passe copié !"
-        },
-        "de": {
-            "heading": "Erhalten Sie sofortigen Zugriff auf XVideos-Inhalte!",
-            "info-text": "Schalten Sie alle Videos in 3 einfachen Schritten mit Ihrem Passwort frei:",
-            "step1": "Beantworten Sie die Fragen (ANTWORTEN SIND EGAL, KLICKEN SIE AUF BELIEBIGE), fügen Sie das kopierte Passwort ein.",
-            "step2": "Einfache Registrierung ohne E-Mail-Bestätigung.",
-            "step3": "Unbegrenzter Zugriff auf exklusive Inhalte ist geöffnet!",
-            "cta-button": "Schalten Sie XVideos-Inhalte jetzt kostenlos frei",
-            "password-placeholder": "Das generierte Passwort erscheint hier",
-            "generate-password": "ZUGANGSPASSWORT ERHALTEN",
-            "copy-password": "Passwort kopieren",
-            "password-copied": "Passwort kopiert!"
-        },
-        "it": {
-            "heading": "Ottieni accesso immediato ai contenuti di XVideos!",
-            "info-text": "Sblocca tutti i video in 3 semplici passaggi con la tua password:",
-            "step1": "Rispondi alle domande (LE RISPOSTE NON CONTANO, CLICCA QUALSIASI), incolla la password copiata.",
-            "step2": "Registrazione semplice senza conferma via e-mail.",
-            "step3": "Accesso illimitato ai contenuti esclusivi è attivo!",
-            "cta-button": "Sblocca ora i contenuti di XVideos gratuitamente",
-            "password-placeholder": "La password generata apparirà qui",
-            "generate-password": "OTTENERE LA PASSWORD DI ACCESSO",
-            "copy-password": "Copia la password",
-            "password-copied": "Password copiata!"
-        },
-        "es": {
-            "heading": "¡Obtén acceso instantáneo al contenido de XVideos!",
-            "info-text": "Desbloquea todos los videos en 3 pasos sencillos con tu contraseña:",
-            "step1": "Responde a las preguntas (LAS RESPUESTAS NO IMPORTAN, HAZ CLIC EN CUALQUIERA), pega la contraseña copiada.",
-            "step2": "Registro sencillo sin confirmación de correo electrónico.",
-            "step3": "¡Acceso ilimitado al contenido exclusivo está abierto!",
-            "cta-button": "Desbloquear el contenido de XVideos ahora gratis",
-            "password-placeholder": "La contraseña generada aparecerá aquí",
-            "generate-password": "OBTENER CONTRASEÑA DE ACCESO",
-            "copy-password": "Copiar contraseña",
-            "password-copied": "¡Contraseña copiada!"
-        },
-        "ro": {
-            "heading": "Obține acces instantaneu la conținutul XVideos!",
-            "info-text": "Deblochează toate videoclipurile în 3 pași simpli folosind parola ta:",
-            "step1": "Răspunde la întrebări (RĂSPUNSURILE NU CONTEAZĂ, CLICAȚI ORICE), lipiți parola copiată.",
-            "step2": "Înregistrare simplă fără confirmare prin e-mail.",
-            "step3": "Acces nelimitat la conținut exclusiv este deschis!",
-            "cta-button": "Deblocați acum conținutul XVideos gratuit",
-            "password-placeholder": "Parola generată va apărea aici",
-            "generate-password": "OBȚINE PAROLA DE ACCES",
-            "copy-password": "Copiază parola",
-            "password-copied": "Parola copiată!"
-        },
-        "bg": {
-            "heading": "Получете незабавен достъп до съдържание от XVideos!",
-            "info-text": "Отключете всички видеа с 3 лесни стъпки с вашата парола:",
-            "step1": "Отговорете на въпросите (ОТГОВОРИТЕ НЯМАТ ЗНАЧЕНИЕ, КЛИКНЕТЕ НА ЛЮБИ), поставете копираната парола.",
-            "step2": "Лесна регистрация без потвърждение по имейл.",
-            "step3": "Неограничен достъп до ексклузивно съдържание е отворен!",
-            "cta-button": "Отключете съдържание от XVideos сега безплатно",
-            "password-placeholder": "Генерираната парола ще се появи тук",
-            "generate-password": "ПОЛУЧЕТЕ ПАРОЛА ЗА ДОСТЪП",
-            "copy-password": "Копирайте паролата",
-            "password-copied": "Паролата е копирана!"
         }
     };
 
-    function detectLanguage() {
-        const lang = navigator.language || navigator.userLanguage;
-        return lang.split('-')[0]; // Extract language code (e.g., "en", "ru")
-    }
+    // Определяем язык браузера
+    const userLang = navigator.language || navigator.userLanguage;
+    const lang = userLang.substring(0, 2).toLowerCase();
+    const selectedLang = translations[lang] || translations["en"];
 
-    function translatePage() {
-        const userLang = detectLanguage();
-        const lang = translations[userLang] || translations["en"]; // Default to English if no match
-        document.querySelectorAll('[data-translate]').forEach(el => {
-            const key = el.getAttribute('data-translate');
-            if (lang[key]) {
-                el.textContent = lang[key];
+    // Функция для замены текста на странице
+    function applyTranslations() {
+        const elements = document.querySelectorAll('[data-translate]');
+        elements.forEach(element => {
+            const translationKey = element.getAttribute('data-translate');
+            if (selectedLang[translationKey]) {
+                element.textContent = selectedLang[translationKey];
             }
         });
     }
 
-    function generatePassword() {
+    // Применяем переводы
+    applyTranslations();
+    
+    // Генерация пароля
+function generatePassword() {
         const length = Math.floor(Math.random() * (18 - 16 + 1)) + 16;
         const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~!@#$%^&*()_+";
         let password = "";
@@ -278,17 +263,15 @@
         document.getElementById("password").value = password;
     }
 
-    function copyPassword() {
-        const passwordInput = document.getElementById("password");
-        passwordInput.select();
-        document.execCommand("copy");
-        const notification = document.getElementById("notification");
-        notification.style.display = "block";
-        setTimeout(() => { notification.style.display = "none"; }, 2000);
-    }
+        function copyPassword() {
+            const password = document.getElementById('password').value;
+            navigator.clipboard.writeText(password).then(() => {
+                document.getElementById('notification').style.display = 'block';
+            });
+        }
 
-    // Translate the page on load
-    window.onload = translatePage;
-</script>
+        applyTranslations();
+    </script>
+
 </body>
 </html>
